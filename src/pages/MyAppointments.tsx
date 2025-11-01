@@ -220,7 +220,6 @@ export function MyAppointments() {
           {pastAppointments.length > 0 ? (
             <div className="grid grid-cols-1 gap-4">
               {pastAppointments.map((appointment) => {
-                const service = getServiceById(appointment.serviceId)
                 const statusInfo = statusConfig[appointment.status]
                 const StatusIcon = statusInfo.icon
 

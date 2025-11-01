@@ -1,4 +1,4 @@
-import { Service, PetType } from '@/types'
+import { Service } from '@/types'
 
 export const mockServices: Service[] = [
   {
