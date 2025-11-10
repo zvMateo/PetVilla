@@ -80,7 +80,7 @@ function App() {
             </ProtectedRoute>
           }
         />
-        
+
         {/* 404 - Debe estar al final, dentro del Layout */}
         <Route path="*" element={<NotFound />} />
       </Route>
