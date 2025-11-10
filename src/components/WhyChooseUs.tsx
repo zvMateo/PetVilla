@@ -1,41 +1,47 @@
-import { CheckCircle2, Shield, Clock, Heart } from 'lucide-react'
-import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { CheckCircle2, Shield, Clock, Heart } from "lucide-react";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 export function WhyChooseUs() {
   const reasons = [
     {
       icon: Shield,
-      title: 'Proveedores Verificados',
-      description: 'Todos nuestros profesionales están certificados y verificados',
-      stat: '100% verificados',
-      color: 'text-primary',
-      bgColor: 'bg-primary/10',
+      title: "Proveedores Verificados",
+      description:
+        "Todos nuestros profesionales están certificados y verificados",
+      stat: "100% verificados",
+      color: "text-primary",
+      bgColor: "bg-primary/10",
     },
     {
       icon: CheckCircle2,
-      title: 'Proceso Simple',
-      description: 'Reserva en 3 pasos: Busca, Elige y Confirma',
-      stat: '< 2 minutos',
-      color: 'text-secondary',
-      bgColor: 'bg-secondary/10',
+      title: "Proceso Simple",
+      description: "Reserva en 3 pasos: Busca, Elige y Confirma",
+      stat: "< 2 minutos",
+      color: "text-secondary",
+      bgColor: "bg-secondary/10",
     },
     {
       icon: Clock,
-      title: 'Recordatorios Automáticos',
-      description: 'Nunca olvides las vacunas o citas de tu mascota',
-      stat: '24/7 activos',
-      color: 'text-accent',
-      bgColor: 'bg-accent/10',
+      title: "Recordatorios Automáticos",
+      description: "Nunca olvides las vacunas o citas de tu mascota",
+      stat: "24/7 activos",
+      color: "text-accent",
+      bgColor: "bg-accent/10",
     },
     {
       icon: Heart,
-      title: 'Hecho con Amor',
-      description: 'Diseñado pensando en ti y en tu mascota',
-      stat: '4.8/5 ⭐',
-      color: 'text-warning',
-      bgColor: 'bg-warning/10',
+      title: "Hecho con Amor",
+      description: "Diseñado pensando en ti y en tu mascota",
+      stat: "4.8/5 ⭐",
+      color: "text-warning",
+      bgColor: "bg-warning/10",
     },
-  ]
+  ];
 
   return (
     <section className="py-16 bg-muted/30">
@@ -57,7 +63,9 @@ export function WhyChooseUs() {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <CardHeader>
-                <div className={`w-16 h-16 rounded-full ${reason.bgColor} flex items-center justify-center mx-auto mb-4`}>
+                <div
+                  className={`w-16 h-16 rounded-full ${reason.bgColor} flex items-center justify-center mx-auto mb-4`}
+                >
                   <reason.icon className={`h-8 w-8 ${reason.color}`} />
                 </div>
                 <CardTitle className="text-lg mb-2">{reason.title}</CardTitle>
@@ -83,5 +91,5 @@ export function WhyChooseUs() {
         </div>
       </div>
     </section>
-  )
+  );
 }

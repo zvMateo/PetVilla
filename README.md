@@ -197,6 +197,7 @@ PetVilla/
 ### Principios Aplicados
 
 **1. Heurísticas de Nielsen**
+
 - ✅ Visibilidad del estado del sistema (loading, notificaciones)
 - ✅ Lenguaje del usuario (términos familiares, no técnicos)
 - ✅ Control y libertad (navegación clara, botones de retorno)
@@ -204,12 +205,14 @@ PetVilla/
 - ✅ Prevención de errores (validación de formularios)
 
 **2. Leyes de UX**
+
 - **Ley de Hick**: Opciones limitadas y claras en cada pantalla
 - **Ley de Fitts**: Botones grandes y fáciles de clickear
 - **Ley de Jakob**: Patrones familiares (como apps populares)
 - **Ley de Miller**: Información agrupada en chunks (5-7 elementos)
 
 **3. Accesibilidad**
+
 - ✅ Contraste WCAG AA
 - ✅ Navegación por teclado
 - ✅ Textos descriptivos
@@ -217,12 +220,12 @@ PetVilla/
 
 ### Pain Points Resueltos
 
-| Pain Point del Usuario | Solución en PetVilla |
-|------------------------|---------------------|
-| "No sé si confiar" | ✅ Sistema de verificación + reseñas |
-| "Olvido citas" | ✅ Recordatorios automáticos |
-| "Es complicado" | ✅ UI simple, reserva en 3 pasos |
-| "No sé dónde buscar" | ✅ Búsqueda intuitiva + categorías |
+| Pain Point del Usuario | Solución en PetVilla                 |
+| ---------------------- | ------------------------------------ |
+| "No sé si confiar"     | ✅ Sistema de verificación + reseñas |
+| "Olvido citas"         | ✅ Recordatorios automáticos         |
+| "Es complicado"        | ✅ UI simple, reserva en 3 pasos     |
+| "No sé dónde buscar"   | ✅ Búsqueda intuitiva + categorías   |
 
 ### Colores con Propósito
 
