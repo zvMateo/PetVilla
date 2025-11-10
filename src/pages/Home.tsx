@@ -11,6 +11,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { FeaturesSection } from "@/components/FeaturesSection";
+import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { mockServices } from "@/data/mockServices";
 
 export function Home() {
@@ -242,6 +243,9 @@ export function Home() {
           </div>
         </section>
       </div>
+
+      {/* Why Choose Us - UX Research Based */}
+      <WhyChooseUs />
 
       {/* Features Section */}
       <FeaturesSection />

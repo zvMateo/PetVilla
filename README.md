@@ -4,6 +4,24 @@
 
 Conecta a los dueños de mascotas con veterinarios, peluquerías y paseadores confiables de forma rápida, segura y sencilla.
 
+> 💡 **Proyecto desarrollado con metodología de Diseño Centrado en el Usuario, UX Research y Design Thinking**
+
+---
+
+## 🎯 Enfoque en UX y Design Thinking
+
+PetVilla no es solo una aplicación, es una **solución diseñada a partir de necesidades reales** de dueños de mascotas en Villa del Rosario.
+
+### Proceso de Diseño:
+
+1. **🔍 Empatizar**: Investigación con usuarios reales
+2. **📋 Definir**: Identificación de pain points críticos
+3. **💡 Idear**: Brainstorming de soluciones creativas
+4. **🎨 Prototipar**: Diseño iterativo de alta fidelidad
+5. **✅ Testear**: Validación continua con usuarios
+
+📄 **[Ver documentación completa de UX Research](./UX_RESEARCH.md)**
+
 ---
 
 ## ✨ Características Principales
@@ -171,6 +189,46 @@ PetVilla/
 - ✅ Loading states profesionales
 - ✅ Página 404 personalizada
 - ✅ Notificaciones toast
+
+---
+
+## 🎨 Decisiones de Diseño UX
+
+### Principios Aplicados
+
+**1. Heurísticas de Nielsen**
+- ✅ Visibilidad del estado del sistema (loading, notificaciones)
+- ✅ Lenguaje del usuario (términos familiares, no técnicos)
+- ✅ Control y libertad (navegación clara, botones de retorno)
+- ✅ Consistencia (sistema de diseño unificado)
+- ✅ Prevención de errores (validación de formularios)
+
+**2. Leyes de UX**
+- **Ley de Hick**: Opciones limitadas y claras en cada pantalla
+- **Ley de Fitts**: Botones grandes y fáciles de clickear
+- **Ley de Jakob**: Patrones familiares (como apps populares)
+- **Ley de Miller**: Información agrupada en chunks (5-7 elementos)
+
+**3. Accesibilidad**
+- ✅ Contraste WCAG AA
+- ✅ Navegación por teclado
+- ✅ Textos descriptivos
+- ✅ Iconos con labels
+
+### Pain Points Resueltos
+
+| Pain Point del Usuario | Solución en PetVilla |
+|------------------------|---------------------|
+| "No sé si confiar" | ✅ Sistema de verificación + reseñas |
+| "Olvido citas" | ✅ Recordatorios automáticos |
+| "Es complicado" | ✅ UI simple, reserva en 3 pasos |
+| "No sé dónde buscar" | ✅ Búsqueda intuitiva + categorías |
+
+### Colores con Propósito
+
+- 🟢 **Verde (Primary)**: Naturaleza, salud, confianza
+- 🔵 **Azul (Secondary)**: Profesionalismo, calma
+- 🟠 **Coral (Accent)**: Calidez, acción, urgencia
 
 ---
 
