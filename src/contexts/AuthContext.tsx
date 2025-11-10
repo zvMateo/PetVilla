@@ -1,87 +1,119 @@
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react'
-import { User, AuthState } from '@/types'
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  ReactNode,
+} from "react";
+import { User, AuthState } from "@/types";
+import { toast } from "sonner";
 
 interface AuthContextType extends AuthState {
-  login: (email: string, password: string) => Promise<void>
-  register: (name: string, email: string, password: string, phone?: string) => Promise<void>
-  logout: () => void
+  login: (email: string, password: string) => Promise<void>;
+  register: (
+    name: string,
+    email: string,
+    password: string,
+    phone?: string
+  ) => Promise<void>;
+  logout: () => void;
 }
 
-const AuthContext = createContext<AuthContextType | undefined>(undefined)
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-const STORAGE_KEY = 'petvilla_auth'
+const STORAGE_KEY = "petvilla_auth";
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<User | null>(null)
-  const [isLoading, setIsLoading] = useState(true)
+  const [user, setUser] = useState<User | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   // Cargar usuario del localStorage al iniciar
   useEffect(() => {
-    const storedUser = localStorage.getItem(STORAGE_KEY)
+    const storedUser = localStorage.getItem(STORAGE_KEY);
     if (storedUser) {
       try {
-        const parsedUser = JSON.parse(storedUser)
-        setUser(parsedUser)
+        const parsedUser = JSON.parse(storedUser);
+        setUser(parsedUser);
       } catch (error) {
-        localStorage.removeItem(STORAGE_KEY)
+        localStorage.removeItem(STORAGE_KEY);
       }
     }
-    setIsLoading(false)
-  }, [])
+    setIsLoading(false);
+  }, []);
 
   const login = async (email: string, _password: string) => {
-    setIsLoading(true)
+    setIsLoading(true);
     try {
       // Simulación de llamada API
-      await new Promise((resolve) => setTimeout(resolve, 800))
-      
+      await new Promise((resolve) => setTimeout(resolve, 800));
+
       // En producción, aquí harías una llamada real a tu API
       // Por ahora, simulamos un login exitoso
       const mockUser: User = {
-        id: '1',
+        id: "1",
         email,
-        name: email.split('@')[0], // Usar parte del email como nombre por defecto
-        phone: '+57 300 123 4567',
-        createdAt: new Date().toISOString()
-      }
+        name: email.split("@")[0], // Usar parte del email como nombre por defecto
+        phone: "+57 300 123 4567",
+        createdAt: new Date().toISOString(),
+      };
 
-      setUser(mockUser)
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(mockUser))
+      setUser(mockUser);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(mockUser));
+      toast.success("¡Bienvenido de nuevo!", {
+        description: `Has iniciado sesión como ${mockUser.name}`,
+      });
     } catch (error) {
-      throw new Error('Credenciales inválidas')
+      toast.error("Error al iniciar sesión", {
+        description: "Por favor verifica tus credenciales",
+      });
+      throw new Error("Credenciales inválidas");
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
-  const register = async (name: string, email: string, _password: string, phone?: string) => {
-    setIsLoading(true)
+  const register = async (
+    name: string,
+    email: string,
+    _password: string,
+    phone?: string
+  ) => {
+    setIsLoading(true);
     try {
       // Simulación de llamada API
-      await new Promise((resolve) => setTimeout(resolve, 1000))
-      
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
       // En producción, aquí harías una llamada real a tu API
       const newUser: User = {
         id: Date.now().toString(),
         email,
         name,
         phone,
-        createdAt: new Date().toISOString()
-      }
+        createdAt: new Date().toISOString(),
+      };
 
-      setUser(newUser)
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(newUser))
+      setUser(newUser);
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(newUser));
+      toast.success("¡Cuenta creada exitosamente!", {
+        description: `Bienvenido a PetVilla, ${name}`,
+      });
     } catch (error) {
-      throw new Error('Error al registrar usuario')
+      toast.error("Error al registrar", {
+        description: "Por favor intenta nuevamente",
+      });
+      throw new Error("Error al registrar usuario");
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   const logout = () => {
-    setUser(null)
-    localStorage.removeItem(STORAGE_KEY)
-  }
+    setUser(null);
+    localStorage.removeItem(STORAGE_KEY);
+    toast.info("Sesión cerrada", {
+      description: "Hasta pronto!",
+    });
+  };
 
   const value: AuthContextType = {
     user,
@@ -89,17 +121,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     isLoading,
     login,
     register,
-    logout
-  }
+    logout,
+  };
 
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 
 export function useAuth() {
-  const context = useContext(AuthContext)
+  const context = useContext(AuthContext);
   if (context === undefined) {
-    throw new Error('useAuth debe usarse dentro de AuthProvider')
+    throw new Error("useAuth debe usarse dentro de AuthProvider");
   }
-  return context
+  return context;
 }
-
